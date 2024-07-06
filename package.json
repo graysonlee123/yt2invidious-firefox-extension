@@ -4,7 +4,8 @@
   "description": "Allows users to open YouTube videos in a configured Invidious instance.",
   "main": "index.js",
   "scripts": {
-    "dev": "npx tsc --watch"
+    "dev": "npx tsc --watch",
+    "build": "npx tsc && npx tsc-alias --resolve-full-paths"
   },
   "repository": {
     "type": "git",
@@ -17,6 +18,7 @@
   },
   "homepage": "https://github.com/graysonlee123/yt2invidious-firefox-extension#readme",
   "devDependencies": {
+    "tsc-alias": "^1.8.10",
     "typescript": "^5.5.3"
   },
   "dependencies": {
