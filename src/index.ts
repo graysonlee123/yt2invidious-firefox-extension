@@ -1,3 +1,5 @@
+import extractVideoQueryParam from './lib/extractVideoQueryParam'
+
 // Called when the user clicks on the context menu item
 function onClickHandler(
   { menuItemId, linkUrl }: browser.contextMenus.OnClickData,
@@ -21,25 +23,6 @@ function onClickHandler(
   browser.tabs.create({
     url: 'https://invidious.net/watch?v=' + videoId,
   })
-}
-
-/**
- * Extracts a YouTube video ID from a string input.
- *
- * Expects the input to be a URL string.
- *
- * @param input The string to extract from.
- * @return Video ID, or an empty string on failure.
- */
-function extractVideoQueryParam(input: string) {
-  if (!URL.canParse(input)) return ''
-
-  const url = new URL(input)
-  const search = url.search
-  const searchParams = new URLSearchParams(search)
-  const videoId = searchParams.get('v')
-
-  return videoId === null ? '' : videoId
 }
 
 // Create the context menu item
