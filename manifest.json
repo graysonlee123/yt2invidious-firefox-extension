@@ -1,0 +1,15 @@
+{
+  "manifest_version": 2,
+  "name": "YT2Invidious",
+  "version": "1.0",
+  "description": "Opens YouTube links in an Invidious instance.",
+  "permissions": ["contextMenus", "tabs"],
+  "icons": {
+    "48": "icons/border-48.png"
+  },
+  "background": {
+    "scripts": ["index.js"],
+    "persistent": false,
+    "type": "module"
+  }
+}
