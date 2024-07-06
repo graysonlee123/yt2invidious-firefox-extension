@@ -5,7 +5,7 @@
   "description": "Opens YouTube links in an Invidious instance.",
   "permissions": ["contextMenus", "tabs"],
   "icons": {
-    "48": "icons/border-48.png"
+    "48": "assets/icons/border-48.png"
   },
   "background": {
     "scripts": ["dist/index.js"],
