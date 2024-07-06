@@ -1,9 +1,14 @@
 // Called when the user clicks on the context menu item
-function onClickHandler({ menuItemId, linkUrl }, tab) {
+function onClickHandler(
+  { menuItemId, linkUrl }: browser.contextMenus.OnClickData,
+  tab?: browser.tabs.Tab
+) {
   if (menuItemId !== 'ytdinvidious') return
 
-  console.log('My context menu item clicked!')
-  console.log({ linkUrl })
+  if (!linkUrl) {
+    console.log('No `linkUrl` was found.')
+    return
+  }
 
   const videoId = extractVideoQueryParam(linkUrl)
 
@@ -23,22 +28,18 @@ function onClickHandler({ menuItemId, linkUrl }, tab) {
  *
  * Expects the input to be a URL string.
  *
- * @param {string} input The string to extract from.
- * @return {string} Video ID, or an empty string on failure.
+ * @param input The string to extract from.
+ * @return Video ID, or an empty string on failure.
  */
-function extractVideoQueryParam(input) {
-  if (typeof input !== 'string') return ''
+function extractVideoQueryParam(input: string) {
   if (!URL.canParse(input)) return ''
 
   const url = new URL(input)
   const search = url.search
-
   const searchParams = new URLSearchParams(search)
-  const videoID = searchParams.get('v')
+  const videoId = searchParams.get('v')
 
-  if (typeof videoID !== 'string') return ''
-
-  return videoID
+  return videoId === null ? '' : videoId
 }
 
 // Create the context menu item

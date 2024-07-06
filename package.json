@@ -1,0 +1,25 @@
+{
+  "name": "yt2invidious-firefox-extension",
+  "version": "1.0.0",
+  "description": "Allows users to open YouTube videos in a configured Invidious instance.",
+  "main": "index.js",
+  "scripts": {
+    "dev": "npx tsc --watch"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/graysonlee123/yt2invidious-firefox-extension.git"
+  },
+  "author": "Grayson Gantek",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/graysonlee123/yt2invidious-firefox-extension/issues"
+  },
+  "homepage": "https://github.com/graysonlee123/yt2invidious-firefox-extension#readme",
+  "devDependencies": {
+    "typescript": "^5.5.3"
+  },
+  "dependencies": {
+    "@types/firefox-webext-browser": "^120.0.4"
+  }
+}

@@ -8,7 +8,7 @@
     "48": "icons/border-48.png"
   },
   "background": {
-    "scripts": ["index.js"],
+    "scripts": ["dist/index.js"],
     "persistent": false,
     "type": "module"
   }
