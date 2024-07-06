@@ -6,7 +6,7 @@
  * @param input The string to extract from.
  * @return Video ID, or an empty string on failure.
  */
-export default function (input: string) {
+export function extractVideoQueryParam(input: string) {
   if (!URL.canParse(input)) return ''
 
   const url = new URL(input)

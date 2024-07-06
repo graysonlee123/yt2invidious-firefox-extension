@@ -1,4 +1,4 @@
-import extractVideoQueryParam from './lib/extractVideoQueryParam'
+import { extractVideoQueryParam } from './lib/extractVideoQueryParam'
 
 // Called when the user clicks on the context menu item
 function onClickHandler(
